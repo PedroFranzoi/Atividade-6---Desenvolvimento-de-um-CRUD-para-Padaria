@@ -1,18 +1,15 @@
 <?php
-
 include 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $name = $_POST['name'];
-    $preco = $_POST['preco'];
-    $quantidade = $_POST['quantidade'];
-    $descricao = $_POST['descricao'];
-
-    $sql = " INSERT INTO produto (nome_produto,preco_produto,descricao_produto,quantidade_produto) VALUE ('$name','$preco','$descricao','$quantidade')";
+    $name_usuario = $_POST['name'];
+    $email = $_POST['email'];
+   
+    $sql = " INSERT INTO usuario (nome_usuario,email_usuario) VALUE ('$name_usuario','$email')";
 
     if ($conn->query($sql) === true) {
-        echo "Novo produto registrado criado com sucesso.";
+        echo "Registro criado com sucesso.";
     } else {
         echo "Erro " . $sql . '<br>' . $conn->error;
     }
