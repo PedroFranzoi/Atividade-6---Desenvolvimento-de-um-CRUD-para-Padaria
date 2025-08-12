@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $quantidade = $_POST['quantidade'];
     $descricao = $_POST['descricao'];
 
-    $sql = " INSERT INTO usuario (nome_produto,preco_produto,descricao_produto,quantidade_produto) VALUE ('$name','$preco','$quantidade','$descricao')";
+    $sql = " INSERT INTO produto (nome_produto,preco_produto,descricao_produto,quantidade_produto) VALUE ('$name','$preco','$quantidade','$descricao')";
 
     if ($conn->query($sql) === true) {
         echo "Novo produto registrado criado com sucesso.";
