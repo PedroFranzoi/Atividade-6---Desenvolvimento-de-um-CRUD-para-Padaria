@@ -14,6 +14,7 @@ if($result->num_rows > 0){
             <th> Preço </th>
             <th> Descrição </th>
             <th> Disponiveis </th>
+            <th> Criador </th>
         </tr>
     ";
 
@@ -24,9 +25,9 @@ if($result->num_rows > 0){
                 <td> {$row['preco_produto']} </td>
                 <td> {$row['descricao_produto']} </td>
                 <td> {$row['quantidade_produto']} </td>
+                <td> {$row['id_usuario']} </td>
                 <td>
-                    <a href='comprar.php>Finalizar compra<a>
-
+                    <a href='update.php?id={$row['id']}'>Utualizar</a>
                 </td>
             </tr>
         ";
