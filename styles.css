@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(243, 183, 19);
+}
+
+.centralizador{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    height: 900px;
+}
+
+
+.flex{
+    display: grid;
+}
