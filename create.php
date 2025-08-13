@@ -36,24 +36,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <div class="centralizador">
 
-    <h1>Adicionar o Produto</h1>
+    
     <div class="centro">
-
+    <h1>Adicionar o Produto</h1>
      <form method="POST" action="create.php">
     <div class="flex">
-        <label for="name">nome:</label>
-        <input type="text" name="name" required>
+        <label for="name">Nome:</label>
+        <input class="informacoesProduto" type="text" name="name" required>
 
-        <label for="preco">preço:</label>
-        <input type="preco" name="preco" required>
+        <label for="preco">Preço:</label>
+        <input class="informacoesProduto"  type="preco" name="preco" required>
 
-        <label for="quantidade">quantidade:</label>
-        <input type="quantidade" name="quantidade">
+        <label for="quantidade">Quantidade:</label>
+        <input class="informacoesProduto"  type="quantidade" name="quantidade">
 
-        <label for="descricao">descrição:</label>
-        <input type="descricao" name="descricao">
-</div>
-        <input type="submit" value="Adicionar">
+        <label for="descricao">Descrição:</label>
+        <input class="informacoesProduto"  type="descricao" name="descricao">
+    </div>
+        <input id="botaoAdd" type="submit" value="Adicionar">
 </div>
     </form>
 

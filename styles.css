@@ -7,10 +7,24 @@ body{
     align-items: center;
     display: flex;
     text-align: center;
-    height: 900px;
+    height: 90%;
 }
 
 
 .flex{
     display: grid;
+}
+
+.centro{
+    font-size: 30px;
+}
+
+#botaoAdd{
+    margin-top: 5%;
+    width: 70%;
+    height: 5%;
+}
+
+.informacoesProduto{
+    height: 30px;
 }
