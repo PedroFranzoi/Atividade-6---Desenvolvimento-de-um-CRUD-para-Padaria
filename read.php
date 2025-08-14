@@ -2,6 +2,8 @@
 
 include 'db.php';
 
+$pessoa = "SELECT nome_usuario FROM usuario WHERE $id=id";
+
 $sql = "SELECT * FROM produto";
 
 $result = $conn->query($sql);
