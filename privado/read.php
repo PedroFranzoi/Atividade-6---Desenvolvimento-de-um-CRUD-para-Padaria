@@ -2,7 +2,6 @@
 
 include 'db.php';
 
-$pessoa = "SELECT nome_usuario FROM usuario WHERE $id=id";
 
 $sql = "SELECT * FROM produto";
 
@@ -23,20 +22,25 @@ if($result->num_rows > 0){
     while($row = $result->fetch_assoc()){
 
         echo "<tr>
-                <td> {$row['nome_produto']} </td>
-                <td> {$row['preco_produto']} </td>
-                <td> {$row['descricao_produto']} </td>
-                <td> {$row['quantidade_produto']} </td>
+                <td> {$row['nome']} </td>
+                <td> {$row['preco']} </td>
+                <td> {$row['descricao']} </td>
+                <td> {$row['quantidade_estoque']} </td>
                 <td> {$row['id_usuario']} </td>
                 <td>
-                    <a href='update.php?id={$row['id']}'>Utualizar</a>
+                    <a href='update.php?id={$row['id_produto']}'>Utualizar</a>
+                </td>
+                <td>
+                    <a href='delete.php?id={$row['id_produto']}'>Deletar</a>
                 </td>
             </tr>
         ";
     }
     echo "</table>";
+    echo "<a href='create.php'>Criar Registro</a>";
 }else{
     echo "Nenhum produto registrado.";
+    echo "<a href='create.php'>Criar Registro</a>";
 }
 
 $conn -> close();

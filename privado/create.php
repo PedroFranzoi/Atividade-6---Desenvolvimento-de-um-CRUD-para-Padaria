@@ -5,11 +5,12 @@ include 'db.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $name = $_POST['name'];
+    $descricao = $_POST['descricao'];
     $preco = $_POST['preco'];
     $quantidade = $_POST['quantidade'];
-    $descricao = $_POST['descricao'];
+    
 
-    $sql = " INSERT INTO produto (nome_produto,preco_produto,descricao_produto,quantidade_produto,id_usuario) VALUE ('$name','$preco','$descricao','$quantidade',1)";
+    $sql = " INSERT INTO produto (nome,descricao,preco,quantidade_estoque,id_usuario) VALUE ('$name','$descricao','$preco','$quantidade',1)";
 
     if ($conn->query($sql) === true) {
         echo "Novo produto registrado criado com sucesso.";
@@ -28,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
 
 </head>
 
@@ -54,7 +55,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input class="informacoesProduto"  type="descricao" name="descricao">
     </div>
         <input id="botaoAdd" type="submit" value="Adicionar">
+        <div>
+            <a href="read.php">Ver Registros</a>
+        </div>
+        
 </div>
+
     </form>
 
 </div>

@@ -6,10 +6,12 @@ $id = $_GET['id'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $name = $_POST['name'];
-    $email = $_POST['email'];
+    $name = $_POST['nome'];
+    $descricao = $_POST['descricao'];
+    $preco = $_POST['preco'];
+    $quantidade = $_POST['quantidade_estoque'];
 
-    $sql = "UPDATE produto SET name ='$name',preco ='$preco', quantidade ='$quantidade', descricao= '$descricao' WHERE id=$id";
+    $sql = "UPDATE produto SET nome ='$name', descricao= '$descricao', preco ='$preco', quantidade_estoque ='$quantidade' WHERE id_produto=$id";
 
     if ($conn->query($sql) === true) {
         echo "Registro atualizado com sucesso.
@@ -22,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit(); 
 }
 
-$sql = "SELECT * FROM produto WHERE id=$id";
+$sql = "SELECT * FROM produto WHERE id_produto=$id";
 $result = $conn -> query($sql);
 $row = $result -> fetch_assoc();
 
@@ -40,10 +42,10 @@ $row = $result -> fetch_assoc();
 
 <body>
 
-    <form method="POST" action="update.php?id=<?php echo $row['id'];?>">
+    <form method="POST" action="update.php?id=<?php echo $row['id_produto'];?>">
 
-        <label for="name">Nome:</label>
-        <input type="text" name="name" value="<?php echo $row['name'];?>" required>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" value="<?php echo $row['nome'];?>" required>
 
         <label for="preco">Preço:</label>
         <input type="preco" name="preco" value="<?php echo $row['preco'];?>" required>
@@ -51,8 +53,8 @@ $row = $result -> fetch_assoc();
         <label for="descricao">Descrição:</label>
         <input type="descricao" name="descricao" value="<?php echo $row['descricao'];?>" required>
 
-        <label for="quantidade">Quantidade:</label>
-        <input type="quantidade" name="quantidade" value="<?php echo $row['quantidade'];?>" required>
+        <label for="quantidade_estoque">Quantidade:</label>
+        <input type="quantidade_estoque" name="quantidade_estoque" value="<?php echo $row['quantidade_estoque'];?>" required>
 
         <input type="submit" value="Atualizar">
 
