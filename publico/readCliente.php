@@ -28,7 +28,7 @@ if($result->num_rows > 0){
                 <td> {$row['quantidade_estoque']} </td>
                 <td> {$row['id_usuario']} </td>
                 <td>
-                    <a href=''>Comprar</a>
+                    <a href='comprarProduto.php?id={$row['id_produto']}'>Comprar</a>
                 </td>
             </tr>
         ";
