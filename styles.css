@@ -1,31 +1,46 @@
-body{
-    background-color: rgb(243, 183, 19);
-}
 
-.centralizador{
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    text-align: center;
-    height: 90%;
-}
+    body {
+        background: linear-gradient(to bottom, #FFECC9, #F6A434);
+        color: #000;
+        margin: 0px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
+    header{
+        background-color: white;
+        padding: 10px;
+        direction: rtl;
+    }
 
-.flex{
-    display: grid;
-}
+    #bumba{
+        display: flex;
+    }
 
-.centro{
-    font-size: 30px;
-}
+    .separation{
+        display: flex;
+        padding: 20px;
+    }
 
-#botaoAdd{
-    margin-top: 5%;
-    width: 70%;
-    height: 5%;
-}
+    .caixabranca{
+        margin: 6px;
+        background-color: white;
+        border-radius: 20px;
+        padding: 100px;
+        width: 400px;
+    }
 
-.informacoesProduto{
-    height: 30px;
-}
+    .centralizador{
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        display: flex;
+        
+    }
 
+   .textogrande1{
+        font-size: 30px;
+    }
+
+    .textogrande2{
+        font-size: 23px;
+    }
